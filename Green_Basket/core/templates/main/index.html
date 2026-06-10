@@ -140,34 +140,6 @@
         .promo-text h2 { font-size: 2.5rem; margin-bottom: 10px; }
         .promo-text p { margin-bottom: 20px; font-size: 1.1rem; opacity: 0.9; }
 
-        /* --- FOOTER --- */
-        footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 50px 5% 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-        }
-        .footer-col h4 { margin-bottom: 20px; color: var(--accent-color); }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 10px; opacity: 0.8; cursor: pointer; }
-        .footer-col ul li:hover { opacity: 1; color: var(--accent-color); }
-        .footer-bottom {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-            opacity: 0.6;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .promo-banner { flex-direction: column; text-align: center; }
-            .search-container { order: 3; flex: 1 0 100%; margin: 0; }
-            .main-header { flex-wrap: wrap; }
-        }
     </style>
 </head>
 <body>
@@ -291,42 +263,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-col">
-            <h4>ShopCore</h4>
-            <p>Your one-stop shop for all things modern and trendy. Quality guaranteed.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-                <li>About Us</li>
-                <li>Contact</li>
-                <li>Shipping Policy</li>
-                <li>Terms of Service</li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Customer Care</h4>
-            <ul>
-                <li>Help Center</li>
-                <li>Track Order</li>
-                <li>Returns & Exchanges</li>
-                <li>FAQs</li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Newsletter</h4>
-            <p>Subscribe for latest updates</p>
-            <div style="display: flex; margin-top: 10px;">
-                <input type="email" placeholder="Email" style="padding: 10px; border-radius: 4px 0 0 4px; border: none; width: 70%;">
-                <button style="background: var(--accent-color); border: none; padding: 10px; border-radius: 0 4px 4px 0; cursor: pointer;">Join</button>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2023 ShopCore E-commerce. All rights reserved.
-        </div>
-    </footer>
+    {% include "components/footer.html" %}
 
 </body>
 </html>

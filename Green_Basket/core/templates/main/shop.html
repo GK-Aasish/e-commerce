@@ -19,17 +19,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: var(--bg-light); color: var(--text-dark); }
 
-        /* --- HEADER (Reused) --- */
-        .main-header {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 10px 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0; z-index: 1000;
-        }
+        
         .logo { font-size: 24px; font-weight: bold; text-decoration: none; color: var(--text-light); display: flex; align-items: center; gap: 10px; }
         .logo span { color: var(--accent-color); }
         .search-container { flex: 0 1 50%; display: flex; margin: 0 20px; }
@@ -207,19 +197,7 @@
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="main-header">
-        <a href="index.html" class="logo"><i class="fa-solid fa-bag-shopping"></i> SHOP<span>CORE</span></a>
-        <div class="search-container">
-            <input type="text" class="search-bar" placeholder="Search for products...">
-            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-        <nav class="nav-actions">
-            <a href="#" class="nav-item"><i class="fa-regular fa-user"></i><span>Account</span></a>
-            <a href="#" class="nav-item"><i class="fa-regular fa-heart"></i><span>Wishlist</span></a>
-            <a href="#" class="nav-item"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span><span class="badge">3</span></a>
-        </nav>
-    </header>
+    {% include "components/header.html" %}
 
     <!-- BREADCRUMBS -->
     <div class="breadcrumbs">
@@ -364,40 +342,7 @@
         </main>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-col">
-            <h4>ShopCore</h4>
-            <p>Your one-stop shop for all things modern and trendy.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-                <li>About Us</li>
-                <li>Contact</li>
-                <li>Shipping Policy</li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Customer Care</h4>
-            <ul>
-                <li>Help Center</li>
-                <li>Track Order</li>
-                <li>FAQs</li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Newsletter</h4>
-            <p>Subscribe for latest updates</p>
-            <div style="display: flex; margin-top: 10px;">
-                <input type="email" placeholder="Email" style="padding: 10px; border-radius: 4px 0 0 4px; border: none; width: 70%;">
-                <button style="background: var(--accent-color); border: none; padding: 10px; border-radius: 0 4px 4px 0; cursor: pointer;">Join</button>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2023 ShopCore E-commerce. All rights reserved.
-        </div>
-    </footer>
+    {% include "components/footer.html" %}
 
 </body>
 </html>
