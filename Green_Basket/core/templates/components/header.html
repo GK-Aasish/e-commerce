@@ -3,17 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header</title>
+    <title>E-commerce Header</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #232f3e; /* Dark Navy */
+            --accent-color: #febd69;  /* Amazon-style Gold */
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-light: #f4f4f4;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Header Container */
+        .main-header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 10px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Logo */
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        /* Search Bar Area */
+        .search-container {
+            flex: 0 1 50%; /* Takes up to 50% of width */
+            display: flex;
+            margin: 0 20px;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-btn {
+            background-color: var(--accent-color);
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-btn:hover {
+            background-color: #f3a847;
+        }
+
+        /* Navigation Icons */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+            position: relative;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-item i {
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+
+        .nav-item:hover {
+            color: var(--accent-color);
+        }
+
+        /* Cart Badge */
+        .badge {
+            position: absolute;
+            top: -5px;
+            right: -8px;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            font-size: 11px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-header {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            .search-container {
+                order: 3; /* Moves search bar to the bottom row on mobile */
+                flex: 1 0 100%;
+                margin: 0;
+            }
+            .logo {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <div class="child-1">
-            <i class="fa-solid fa-leaf"></i>
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="#" class="logo">
+            <i class="fa-solid fa-bag-shopping"></i> Green<span>Basket</span>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search for products, brands and more...">
+            <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
         </div>
-        <div>
-            <span>Search Bar</span>
-        </div>
-    </div>
+
+        <!-- Right Nav -->
+        <nav class="nav-actions">
+            <a href="#" class="nav-item">
+                <i class="fa-regular fa-heart"></i>
+                <span>Wishlist</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Cart</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-regular fa-user"></i>
+                <span>Account</span>
+            </a>
+        </nav>
+    </header>
+
 </body>
 </html>
